@@ -1,0 +1,54 @@
+html {
+  color: white;
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url(../cool-333.github.io/assets/brida_staright.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.hyperlink,
+h1,
+h2,
+.copyright {
+  text-align: center;
+}
+
+.copyright {
+  color: lightgrey;
+}
+
+table {
+  margin: 0 auto;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+.hyperlink {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.hyperlink {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.hyperlink a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 15px 30px;
+}
+
+.hyperlink a:hover {
+  color: white;
+  border-color: black;
+  background-color: #26364a;
+}
