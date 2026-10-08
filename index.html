@@ -225,6 +225,85 @@
       @media (max-height: 280px) {
         .start-label { display: none; }
       }
+
+      /* Foreground desk accessories, kept separate from the monitor and boot effect. */
+      .desk-scene { container-type: inline-size; }
+      .keyboard {
+        left: 30%; bottom: -2%; width: 48%; height: 13%;
+        display: flex; flex-direction: column; gap: 3%; padding: 1.5%;
+        border: 3px solid #69515c; border-radius: 5px 5px 7px 7px;
+        background: linear-gradient(#d0b7a1, #a68b80);
+        box-shadow: inset 1px 2px #f4dbc0, inset -2px -3px #80656a, 0 5px #513f4c, 2px 9px 7px #22182f55;
+        transform: perspective(350px) rotateX(22deg);
+      }
+      .keyboard-row { display: flex; gap: 2%; flex: 1; min-height: 0; }
+      .keyboard-row span {
+        display: flex; align-items: center; justify-content: center;
+        flex: 1; min-width: 0; overflow: hidden;
+        border: 1px solid #9b7f7b; border-radius: 2px;
+        background: linear-gradient(#f0d8bd, #cdb299);
+        box-shadow: inset 0 1px #fff1d455, inset 0 -2px #b1958a, 0 1px #745d68;
+        color: #65505b; font-size: clamp(4px, 1.2cqw, 8px); font-weight: bold; line-height: 1;
+      }
+      .keyboard-row span:last-child { grid-column: auto; }
+      .keyboard-row .wide { flex: 1.7; }
+      .keyboard-row .space { flex: 6.5; }
+      .mousepad {
+        position: absolute; z-index: 3; right: -5%; bottom: -3%; width: 23%; height: 16%;
+        border: 2px solid #9c617a; border-radius: 12% 18% 14% 12%;
+        background: linear-gradient(135deg, #d997b5, #bc7b9c);
+        box-shadow: inset 1px 1px #f8bfd5, 2px 4px #70445d;
+      }
+      .pad-sticker { position: absolute; top: 7%; left: 9%; color: #ecb7d0; font-size: clamp(10px, 3cqw, 20px); text-shadow: 1px 1px #915a7a; }
+      .mousepad .mouse {
+        right: 6%; bottom: 12%; width: 59%; height: 75%;
+        border: 2px solid #76606b; border-radius: 50% 50% 44% 44%;
+        background: linear-gradient(110deg, #e3d0b9, #c5af9b 65%, #aa8e89);
+        transform: rotate(-17deg);
+        box-shadow: inset 2px 2px #f1ddc6, inset -2px -3px #a18a83, 3px 5px 3px #5d3a5766;
+      }
+      .mousepad .mouse::before { content: ""; position: absolute; top: 0; left: 49%; width: 1px; height: 40%; background: #8d7779; }
+      .mouse-wheel { position: absolute; top: 10%; left: 44%; width: 13%; height: 17%; border: 1px solid #7b6771; border-radius: 4px; background: repeating-linear-gradient(#a8958b 0 2px, #806e72 2px 3px); }
+      .books { z-index: 5; bottom: 14%; left: -5%; width: 22%; transform: rotate(-7deg); }
+      .books span {
+        padding: 4% 8%; border: 2px solid #665064;
+        background: linear-gradient(#ead2c8 0 18%, #c7aaa9 20% 82%, #a88698 84%);
+        box-shadow: inset 3px 0 #86677b, inset -3px 0 #ead6c1, 2px 2px #3e304777;
+      }
+      .books span:nth-child(2) { transform: translateX(4%); }
+      .books span:nth-child(3) { transform: translateX(-3%); }
+      .books span:nth-child(4) { transform: translateX(3%); }
+      .clock {
+        z-index: 6; left: 0; bottom: 0; width: 27%; padding: 1.8%;
+        border-color: #765d69; background: linear-gradient(#191b22, #292730);
+        color: #bdc9a1; font-size: clamp(7px, 1.9cqw, 13px); line-height: 1.65;
+        box-shadow: inset 0 0 0 2px #3c3340, 3px 4px #382a38;
+        font-variant-numeric: tabular-nums; white-space: nowrap;
+      }
+      .clock span { display: block; }
+      .cocoa-cup {
+        position: absolute; z-index: 4; right: -3%; bottom: 19%; width: 12%; height: 12%;
+        border: 2px solid #8d657d; border-radius: 12% 12% 30% 30%;
+        background: linear-gradient(90deg, #c9a3bf, #ad80a5);
+        box-shadow: inset 2px 0 #e3c2d5, 2px 5px #49324755;
+      }
+      .cocoa-cup::before { content: ""; position: absolute; z-index: -1; right: -32%; top: 17%; width: 44%; height: 54%; border: 4px solid #b991b0; border-radius: 50%; }
+      .cocoa-cup::after { content: ""; position: absolute; top: -9%; left: -2%; width: 104%; height: 22%; border: 3px solid #e0c1d3; border-radius: 50%; background: radial-gradient(ellipse, #a47263, #684342 75%); }
+      .cup-heart { position: absolute; top: 30%; left: 30%; color: #e4bad1; font-size: clamp(12px, 3.5cqw, 24px); }
+      .steam { position: absolute; z-index: 1; bottom: 92%; width: 18%; height: 62%; border-left: 2px solid #eadde0; border-radius: 50%; opacity: 0; animation: cocoa-steam 3.6s ease-out infinite; pointer-events: none; }
+      .steam-one { left: 22%; }
+      .steam-two { left: 47%; animation-delay: 1.2s; }
+      .steam-three { left: 70%; animation-delay: 2.4s; }
+      @keyframes cocoa-steam { 0% { transform: translateY(8%) scale(.7); opacity: 0; } 25% { opacity: .6; } 100% { transform: translateY(-75%) scale(1.3); opacity: 0; } }
+      @media (max-width: 600px) {
+        .books { left: -3%; }
+        .keyboard { border-width: 2px; }
+        .keyboard-row { gap: 1.5%; }
+        .keyboard-row span { border-width: .5px; }
+        .mousepad { right: -4%; }
+        .cocoa-cup { right: -1%; }
+      }
+      @media (prefers-reduced-motion: reduce) { .steam { animation: none; opacity: .3; } }
     </style>
   </head>
   <body>
@@ -247,13 +326,16 @@
         <span class="sticker sticker-heart" aria-hidden="true">♥</span>
       </section>
       <div class="books" aria-hidden="true"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git &amp; GitHub</span></div>
-      <div class="clock" aria-hidden="true">HELLO, WORLD!<br />READY TO START</div>
+      <div class="clock" role="img" aria-label="한국 표준시 시계"><span id="clockDate">---- -- --</span><span id="clockTime">-- --:--:--</span></div>
       <div class="keyboard" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-        <span></span>
+        <div class="keyboard-row"><span>Esc</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>-</span><span>=</span><span class="wide">←</span></div>
+        <div class="keyboard-row"><span class="wide">Tab</span><span>Q</span><span>W</span><span>E</span><span>R</span><span>T</span><span>Y</span><span>U</span><span>I</span><span>O</span><span>P</span><span>[</span><span>]</span></div>
+        <div class="keyboard-row"><span class="wide">Caps</span><span>A</span><span>S</span><span>D</span><span>F</span><span>G</span><span>H</span><span>J</span><span>K</span><span>L</span><span>;</span><span class="wide">Enter</span></div>
+        <div class="keyboard-row"><span class="wide">Shift</span><span>Z</span><span>X</span><span>C</span><span>V</span><span>B</span><span>N</span><span>M</span><span>,</span><span>.</span><span>/</span><span class="wide">Shift</span></div>
+        <div class="keyboard-row"><span class="wide">Ctrl</span><span>Alt</span><span class="space">SPACE</span><span>Alt</span><span class="wide">Ctrl</span></div>
       </div>
-      <div class="mouse" aria-hidden="true"></div>
+      <div class="mousepad" aria-hidden="true"><span class="pad-sticker">♥</span><div class="mouse"><span class="mouse-wheel"></span></div></div>
+      <div class="cocoa-cup" aria-hidden="true"><span class="cup-heart">♥</span><span class="steam steam-one"></span><span class="steam steam-two"></span><span class="steam steam-three"></span></div>
     </main>
     <script>
       const startLink = document.querySelector("#startPortfolio");
@@ -277,6 +359,26 @@
         document.body.classList.remove("is-booting");
         startLink.removeAttribute("aria-busy");
       });
+
+      const koreaClockFormatter = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Seoul", year: "numeric", month: "2-digit", day: "2-digit",
+        hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true,
+      });
+      function formatKoreanClock(date) {
+        const parts = Object.fromEntries(koreaClockFormatter.formatToParts(date).map((part) => [part.type, part.value]));
+        return {
+          date: `${parts.year}-${parts.month}-${parts.day}`,
+          time: `${parts.dayPeriod} ${parts.hour}:${parts.minute}:${parts.second}`,
+        };
+      }
+      function updateKoreanClock() {
+        const clock = formatKoreanClock(new Date());
+        document.querySelector("#clockDate").textContent = clock.date;
+        document.querySelector("#clockTime").textContent = clock.time;
+      }
+      updateKoreanClock();
+      window.setInterval(updateKoreanClock, 1000);
+      window.addEventListener("pageshow", updateKoreanClock);
     </script>
   </body>
 </html>

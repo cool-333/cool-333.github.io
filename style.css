@@ -267,7 +267,9 @@ button { border: 0; }
   position: absolute;
   left: 50%;
   top: 50%;
+  width: 22px;
   width: clamp(14px, 3.1cqw, 30px);
+  height: 22px;
   height: clamp(14px, 3.1cqw, 30px);
   border: 2px solid #f8e9ff;
   border-radius: 50%;
@@ -327,4 +329,24 @@ button { border: 0; }
 @media (prefers-reduced-motion: reduce) {
   .scene-frame .hotspot::after { animation: none; transform: translate(-50%, -50%); opacity: .9; }
   .character-blink { animation: none; display: none; }
+}
+
+/* Mobile markers and eyelids remain animated, including reduced-motion devices. */
+@media (max-width: 820px) {
+  .scene-frame .hotspot::after { animation: room-hotspot-pulse 2s ease-in-out infinite; }
+  .character-blink { display: block; animation: character-eye-blink 6s step-end infinite; }
+}
+
+.project-links { display: flex; flex-wrap: wrap; column-gap: 16px; }
+
+/* Only the right-hand information body scrolls on desktop. */
+@media (min-width: 821px) {
+  .portfolio { height: calc(100svh - 2 * clamp(20px, 3vw, 48px)); }
+  .character-area {
+    width: min(100%, calc((100svh - 2 * clamp(20px, 3vw, 48px)) * 97 / 62));
+    justify-self: center;
+  }
+  .info-window { display: flex; flex-direction: column; max-height: 100%; }
+  .window-titlebar { flex-shrink: 0; }
+  .window-content { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
 }

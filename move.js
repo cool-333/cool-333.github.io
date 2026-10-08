@@ -82,7 +82,7 @@ const pages = {
         </div>
         <div class="info-card">
           <strong>GitHub</strong>
-          <p>github.com/username</p>
+          <p>github.com/cool-333</p>
         </div>
         <div class="info-card">
           <strong>Blog</strong>
@@ -99,6 +99,7 @@ hotspots.forEach((hotspot) => {
 
     pageTitle.textContent = page.title;
     pageContent.innerHTML = page.content;
+    pageContent.closest(".window-content").scrollTop = 0;
     closeWindow.classList.add("is-visible");
   });
 });
@@ -106,5 +107,6 @@ hotspots.forEach((hotspot) => {
 closeWindow.addEventListener("click", () => {
   pageTitle.textContent = homeTitle;
   pageContent.innerHTML = homeContent;
+  pageContent.closest(".window-content").scrollTop = 0;
   closeWindow.classList.remove("is-visible");
 });
