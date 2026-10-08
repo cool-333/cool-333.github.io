@@ -5,40 +5,39 @@ const hotspots = document.querySelectorAll(".hotspot");
 
 const homeTitle = "안녕하세요!";
 const homeContent = `
-  <h2>신입 프론트엔드 개발자 000입니다.</h2>
+  <h2>신입 프론트엔드 개발자 성시원입니다.</h2>
   <p>
-    좋아하는 것을 꾸준히 공부하며,<br />
-    하나씩 만들어가는 개발자가 되고 싶습니다.
-  </p>
-
-  <div class="profile-list">
-    <p><strong>이름</strong><span>000</span></p>
-    <p><strong>분야</strong><span>Frontend Developer</span></p>
-    <p><strong>관심 분야</strong><span>웹 개발, UI/UX, 인터랙션</span></p>
-    <p><strong>한마디</strong><span>꾸준히 공부하고 즐겁게 개발하고 싶습니다.</span></p>
-  </div>
-`;
+    만들고 싶은 것을 하나씩 만들어가며,<br />
+    차근차근 공부하는 개발자가 되고 싶습니다.
+  </p>`;
 
 const pages = {
   career: {
-    title: "경력 및 활동",
+    title: "자기소개",
     content: `
       <div class="timeline">
         <div class="info-card">
-          <strong>Frontend Study</strong>
-          <p>HTML, CSS, JavaScript를 중심으로 프론트엔드를 공부하고 있습니다.</p>
+          <strong>인적사항</strong>
+          <p><strong>MBTI</strong> INFJ</p>
+          <p><strong>생년월일</strong> 2002.06.12</p>
+          <p><strong>주소지</strong> 서울 관악구 신림동</p>
+
         </div>
         <div class="info-card">
-          <strong>Personal Projects</strong>
-          <p>개인 프로젝트 2개를 완성했습니다.</p>
+          <strong>학력사항</strong>
+          <p><strong>18.08.27 ~ 21.02.02</strong> 전남여자상업고등학교 졸업</p>
+        </div>
+
         </div>
         <div class="info-card">
-          <strong>Team Project</strong>
-          <p>팀 프로젝트 1개를 완성했습니다.</p>
+          <strong>교육사항</strong>
+          <p><strong>26.08.12 ~ 27.01.28</strong> 생성형 AI 융합 (영상제작 UI/UX) 웹개발 웹기획자 양성과정</p>
         </div>
+
         <div class="info-card">
-          <strong>Server Team Project</strong>
-          <p>서버가 있는 팀 프로젝트를 추가로 진행할 예정입니다.</p>
+          <strong>기술 스택</strong>
+          <p><strong>FrontEnd</strong> HTML5, CSS3, JavaScript (ES6), React</p>
+          <p><strong>BackEnd</strong> Node.js, Express, Supabase (PostgreSQL)</p>
         </div>
       </div>
     `,
@@ -49,24 +48,29 @@ const pages = {
     content: `
       <div class="project-list">
         <div class="info-card">
-          <strong>Personal Project 01</strong>
-          <p>개인 프로젝트</p>
-          <a href="#" aria-label="개인 프로젝트 1 자세히 보기">자세히 보기 →</a>
+          <strong>Personal Project : Profile Card Maker</strong>
+          <p>게임 컨셉으로 간단한 자기소개를 할 수 있는 카드를 만드는 사이트입니다.</p>
+          <a href="https://profile-card-maker-five.vercel.app/" target="_blank" aria-label="메이커 사이트 바로가기">메이커 사이트 바로가기</a>&nbsp; &nbsp;
+          <a href="#" target="_blank" aria-label="메이커 코드 바로가기">메이커 코드 바로가기</a>
         </div>
         <div class="info-card">
+        
           <strong>Personal Project 02</strong>
-          <p>개인 프로젝트</p>
-          <a href="#" aria-label="개인 프로젝트 2 자세히 보기">자세히 보기 →</a>
+          <p>개인 프로젝트 (수정 예정)</p>
+          <a href="#" aria-label="개인 프로젝트 (수정 예정) 자세히 보기">자세히 보기</a>
         </div>
         <div class="info-card">
-          <strong>Team Project</strong>
-          <p>완성된 팀 프로젝트</p>
-          <a href="#" aria-label="팀 프로젝트 자세히 보기">자세히 보기 →</a>
+          <strong>Team Project : 코레일 사이트 리뉴얼 _ Re:Rail</strong>
+          <p>코레일 사이트를 직관적이고 사용자 중심적으로 리뉴얼한 팀 프로젝트입니다.</p>
+
+          // 사이트 내 깃허브로 포크해온 후 사이트 직링 수정 예정
+          <a href="https://github.com/leesansa/re_rail" target="_blank" aria-label="Re:Rail 코드">Re:Rail 코드</a>&nbsp; &nbsp;
+          <a href="https://leesansa.github.io/re_rail/" target="_blank" aria-label="Re:Rail 사이트">Re:Rail 사이트</a>
         </div>
         <div class="info-card">
           <strong>Server Team Project</strong>
           <p>서버 연동 팀 프로젝트 예정</p>
-          <a href="#" aria-label="서버 팀 프로젝트 자세히 보기">자세히 보기 →</a>
+          <a href="#" aria-label="팀 프로젝트 사이트">팀 프로젝트 사이트</a>
         </div>
       </div>
     `,
@@ -78,15 +82,15 @@ const pages = {
       <div class="contact-list">
         <div class="info-card">
           <strong>E-mail</strong>
-          <p>example@email.com</p>
+          <p>cool333@kakao.com</p>
         </div>
         <div class="info-card">
           <strong>GitHub</strong>
           <p>github.com/cool-333</p>
         </div>
         <div class="info-card">
-          <strong>Blog</strong>
-          <p>blog.example.com</p>
+          <strong>Phone Number</strong>
+          <p>010-4268-7520</p>
         </div>
       </div>
     `,
