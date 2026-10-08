@@ -3,65 +3,280 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cool한 성시원</title>
-    <link rel="stylesheet" href="index.css" />
+    <meta name="theme-color" content="#211b31" />
+    <title>Welcome to My Portfolio</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <style>
+      :root { color-scheme: dark; --lavender: #c6b6eb; }
+      body {
+        min-height: 100vh;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        overflow-x: clip;
+        padding: 24px 16px;
+        color: var(--lavender);
+        background: #211b31;
+        font-family: "Courier New", "Malgun Gothic", monospace;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(#191522d9, #211b31ee), url("./assets/rpg-scene.png") center / cover;
+      }
+      .desk-scene {
+        position: relative;
+        isolation: isolate;
+        width: min(660px, calc(100vw - 32px), calc(88svh / 1.1));
+        aspect-ratio: 1 / 1.1;
+      }
+      .desk-scene::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 80% -8% -4%;
+        border-top: 3px solid #8c7180;
+        border-radius: 4px;
+        background: repeating-linear-gradient(0deg, #0000 0 15px, #33233044 16px 17px), #69505a;
+        box-shadow: 0 25px 45px #0007;
+      }
+      .crt {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        aspect-ratio: 1.13;
+        border: 3px solid #4d3946;
+        border-radius: 8% 7% 7% 8% / 6% 6% 8% 8%;
+        background: linear-gradient(120deg, #c2ada3, #aa948f 55%, #bea79d);
+        box-shadow: inset 3px 4px #e5d0b777, inset -5px -5px #725e6977, 0 18px 35px #0008;
+        transform-origin: 50% 43%;
+      }
+      .screen {
+        position: absolute;
+        inset: 10% 9% 20%;
+        overflow: hidden;
+        border: clamp(7px, 2vw, 15px) solid #353039;
+        border-radius: 7% / 9%;
+        background: radial-gradient(ellipse at center, #20202b, #101017 80%);
+        box-shadow: 0 0 0 3px #70636a, inset 0 0 28px #000;
+      }
+      .screen::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: repeating-linear-gradient(0deg, #0002 0 1px, transparent 1px 4px);
+      }
+      .cat-symbol {
+        position: absolute;
+        top: 12%;
+        left: 50%;
+        width: 18%;
+        transform: translateX(-50%);
+        fill: none;
+        stroke: #9c85b3;
+        stroke-width: 3;
+        shape-rendering: crispEdges;
+      }
+      .power-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        display: grid;
+        place-items: center;
+        width: clamp(48px, 11vw, 68px);
+        height: clamp(48px, 11vw, 68px);
+        transform: translate(-50%, -50%);
+        border: 2px solid #d8c7ff;
+        border-radius: 50%;
+        color: #eee4ff;
+        background: #88759f66;
+        box-shadow: 0 0 10px #c6a7ff88;
+        animation: power-glow 2s ease-in-out infinite;
+        text-decoration: none;
+      }
+      .power-button svg { width: 56%; height: 56%; fill: none; stroke: currentColor; stroke-width: 2; }
+      .power-button:hover { background: #b194df88; }
+      .power-button:focus-visible { outline: 3px solid #fff; outline-offset: 7px; }
+      .start-label {
+        position: absolute;
+        top: 74%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: clamp(11px, 2.4vw, 18px);
+        letter-spacing: .09em;
+        text-shadow: 0 0 8px #c6a7ff55;
+      }
+      .sticky-note {
+        position: absolute;
+        right: -1%;
+        top: -1%;
+        width: 24%;
+        padding: 4% 2%;
+        transform: rotate(5deg);
+        color: #4c3a35;
+        background: #e0c49d;
+        box-shadow: 3px 4px #49384666;
+        font-size: clamp(8px, 1.65vw, 12px);
+        font-weight: bold;
+        line-height: 1.6;
+        text-align: center;
+      }
+      .sticky-note::before { content: ""; position: absolute; top: -6%; left: 43%; width: 14%; height: 16%; background: #a59086aa; }
+      .bezel-power {
+        position: absolute;
+        bottom: 4%;
+        left: 50%;
+        width: 8%;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        transform: translateX(-50%);
+        border: 2px solid #796169;
+        border-radius: 50%;
+        color: #534452;
+        background: #ccb3a2;
+        box-shadow: inset 1px 1px #ead8bd;
+      }
+      .bezel-power svg { width: 65%; fill: none; stroke: currentColor; stroke-width: 2; }
+      .sticker { position: absolute; bottom: 4%; font-size: clamp(20px, 5vw, 40px); line-height: 1; }
+      .sticker-cat { left: 8%; width: 8%; height: auto; fill: #6f567e; stroke: #c7a9cd; stroke-width: 2; }
+      .sticker-heart { right: 7%; color: #aa718f; text-shadow: 1px 2px #70506c; }
+      .stand {
+        position: absolute;
+        z-index: 0;
+        top: 73%;
+        left: 31%;
+        width: 38%;
+        height: 18%;
+        border: 3px solid #5b4551;
+        border-radius: 0 0 22% 22%;
+        background: linear-gradient(#7d6b74, #ad9691);
+      }
+      .keyboard {
+        position: absolute;
+        z-index: 3;
+        left: 34%;
+        bottom: 0;
+        width: 45%;
+        height: 11%;
+        padding: 1.4%;
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        gap: 4%;
+        border: 3px solid #77606a;
+        border-radius: 5px;
+        background: #bca498;
+        transform: perspective(220px) rotateX(18deg);
+        box-shadow: 0 5px #55414e;
+      }
+      .keyboard span { border: 1px solid #91797c; border-radius: 2px; background: #d6beaa; box-shadow: 0 1px #6e5865; }
+      .keyboard span:last-child { grid-column: 3 / 8; }
+      .clock {
+        position: absolute;
+        z-index: 3;
+        bottom: 0;
+        left: 2%;
+        width: 27%;
+        padding: 2%;
+        border: 5px solid #69515f;
+        border-radius: 10px;
+        color: #b3b990;
+        background: #24232b;
+        box-shadow: 3px 4px #382a38;
+        font-size: clamp(9px, 2vw, 16px);
+        text-align: center;
+      }
+      .books { position: absolute; bottom: 16%; left: -3%; width: 20%; transform: rotate(-6deg); }
+      .books span { display: block; padding: 3% 8%; border: 2px solid #665064; border-radius: 3px; color: #5c4860; background: #d2b9b4; font-size: clamp(8px, 1.7vw, 12px); font-weight: bold; box-shadow: inset 0 -3px #ac90a4; }
+      .mouse { position: absolute; right: 3%; bottom: 1%; width: 12%; height: 10%; border: 2px solid #6a5462; border-radius: 55% 55% 45% 45%; background: linear-gradient(90deg, #cbbba5 49%, #8c7379 50%, #c3af9e 52%); transform: rotate(-12deg); box-shadow: 3px 4px #34223466; }
+      .is-booting .crt { animation: monitor-boot 600ms ease-in forwards; }
+      .is-booting .power-button { animation: none; background: #c6b6eb99; }
+      .is-booting .screen { filter: brightness(1.25); }
+      @keyframes power-glow {
+        0%, 100% { opacity: .68; box-shadow: 0 0 8px #c6a7ff66, 0 0 0 0 #c6a7ff33; }
+        50% { opacity: 1; box-shadow: 0 0 24px #c6a7ffbb, 0 0 0 7px #c6a7ff11; }
+      }
+      @keyframes monitor-boot {
+        0% { transform: scale(1); opacity: 1; }
+        75% { transform: scale(1.065); opacity: 1; }
+        100% { transform: scale(1.08); opacity: 0; }
+      }
+      @media (max-width: 600px) {
+        body { padding: 20px 16px; }
+        .desk-scene { width: min(calc(100vw - 48px), calc(85svh / 1.1)); }
+        .books { left: -2%; }
+        .clock { border-width: 3px; border-radius: 6px; }
+        .keyboard { gap: 3%; border-width: 2px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .power-button, .is-booting .crt { animation: none; }
+        .power-button { opacity: 1; }
+      }
+      @media (max-height: 360px) {
+        .cat-symbol { display: none; }
+        .power-button { width: 48px; height: 48px; }
+        .start-label { top: 82%; font-size: 11px; }
+      }
+      @media (max-height: 280px) {
+        .start-label { display: none; }
+      }
+    </style>
   </head>
   <body>
-    <h1 id="top">메인 페이지</h1>
-
-    <span class="hyperlink">
-      <a href="#top">처음으로</a>
-      <a href="#introduce">Introduce</a>
-      <a href="#finish">Bottom</a>
-    </span>
-
-    <div style="margin-bottom: 800px"></div>
-
-    <span class="hyperlink">
-      <a href="#top">처음으로</a>
-      <a href="#introduce">Introduce</a>
-      <a href="#finish">Bottom</a>
-    </span>
-
-    <h2 id="introduce">Introduce Myself</h2>
-    <table border="1">
-      <thead>
-        <th>구분</th>
-        <th>내용</th>
-      </thead>
-      <tr>
-        <td>이름</td>
-        <td>성시원</td>
-      </tr>
-      <tr>
-        <td>출생년도</td>
-        <td>2002</td>
-      </tr>
-      <tr>
-        <td>MBTI</td>
-        <td>INFJ</td>
-      </tr>
-      <tr>
-        <td>깃허브</td>
-        <td>
-          <a href="https://github.com/cool-333" target="_blank">
-            Github.com/cool-333
+    <main class="desk-scene" aria-label="포트폴리오 시작 화면">
+      <div class="stand" aria-hidden="true"></div>
+      <section class="crt" aria-label="모니터">
+        <div class="screen">
+          <svg class="cat-symbol" viewBox="0 0 80 70" aria-hidden="true">
+            <path d="M10 35V20H16V7H23V13H29V20H51V13H57V7H64V20H70V35H75V51H69V58H58V63H22V58H11V51H5V35Z" />
+            <path d="M25 37V43M55 37V43M35 49H45M40 49V54" />
+          </svg>
+          <a id="startPortfolio" class="power-button" href="./room.html" aria-label="전원을 켜고 포트폴리오 열기">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v10M6.4 5.5a9 9 0 1 0 11.2 0" stroke-linecap="round" /></svg>
           </a>
-        </td>
-      </tr>
-    </table>
-
-    <div style="margin-bottom: 800px"></div>
-
-    <span class="hyperlink">
-      <a href="#top">처음으로</a>
-      <a href="#introduce">Introduce</a>
-      <a href="#finish">Bottom</a>
-    </span>
-
-    <h2 id="finish">End.</h2>
-    <p class="copyright">
-      Background Image Copyrighted by brida_staright (Pixabay)
-    </p>
+          <p class="start-label">PRESS TO START</p>
+        </div>
+        <p class="sticky-note">WELCOME TO<br />MY PORTFOLIO<br />:)</p>
+        <svg class="sticker sticker-cat" viewBox="0 0 80 70" aria-hidden="true"><path d="M10 35V20H16V7H23V13H29V20H51V13H57V7H64V20H70V35H75V51H69V58H58V63H22V58H11V51H5V35Z" /></svg>
+        <span class="bezel-power" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v10M6.4 5.5a9 9 0 1 0 11.2 0" stroke-linecap="round" /></svg></span>
+        <span class="sticker sticker-heart" aria-hidden="true">♥</span>
+      </section>
+      <div class="books" aria-hidden="true"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git &amp; GitHub</span></div>
+      <div class="clock" aria-hidden="true">HELLO, WORLD!<br />READY TO START</div>
+      <div class="keyboard" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span>
+      </div>
+      <div class="mouse" aria-hidden="true"></div>
+    </main>
+    <script>
+      const startLink = document.querySelector("#startPortfolio");
+      const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+      let starting = false;
+      startLink.addEventListener("click", (event) => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+        event.preventDefault();
+        if (starting) return;
+        starting = true;
+        if (motionPreference.matches) {
+          window.location.assign(startLink.href);
+          return;
+        }
+        document.body.classList.add("is-booting");
+        startLink.setAttribute("aria-busy", "true");
+        window.setTimeout(() => window.location.assign(startLink.href), 600);
+      });
+      window.addEventListener("pageshow", () => {
+        starting = false;
+        document.body.classList.remove("is-booting");
+        startLink.removeAttribute("aria-busy");
+      });
+    </script>
   </body>
 </html>

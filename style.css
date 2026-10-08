@@ -1,0 +1,330 @@
+:root {
+  --bg: #171222;
+  --panel: #fbf8ff;
+  --purple: #5f4bb6;
+  --purple-dark: #3f347e;
+  --lavender: #c7b3f1;
+  --line: #9c8fd0;
+  --text: #2c2855;
+  --subtext: #665f85;
+  --hotspot: #c875ff;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  background:
+    radial-gradient(ellipse at 25% 20%, #443061 0, transparent 55%),
+    radial-gradient(ellipse at 90% 85%, #2b2346 0, transparent 45%),
+    var(--bg);
+  color: var(--text);
+  font-family: Arial, "Malgun Gothic", sans-serif;
+  padding: clamp(20px, 3vw, 48px);
+}
+
+button { border: 0; }
+
+.portfolio {
+  width: min(1440px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 62fr) minmax(0, 38fr);
+  align-items: center;
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.character-area {
+  min-width: 0;
+  border: 2px solid #9c8fd077;
+  border-radius: 12px;
+  background: #2a2037;
+  box-shadow: 0 20px 50px #0005;
+}
+
+/* Keep the image and click targets in the same coordinate system. */
+.scene-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 97 / 62;
+  border-radius: 10px;
+}
+
+.character-scene {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 97 / 62;
+  border-radius: inherit;
+}
+
+/* Glowing rings and labels are already included in the artwork. */
+.scene-frame .hotspot {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.scene-frame .hotspot:hover {
+  background: #c875ff22;
+  box-shadow: 0 0 16px 4px #c875ff99;
+}
+
+.hotspot:focus-visible,
+.close-button:focus-visible,
+.info-card a:focus-visible {
+  outline: 3px solid #9b58e5;
+  outline-offset: 4px;
+}
+
+.scene-frame .hotspot:focus-visible {
+  outline-color: #fff;
+  background: #c875ff44;
+}
+
+.hotspot-career { left: 45.36%; top: 21.29%; }
+.hotspot-projects { left: 53.61%; top: 54.68%; }
+.hotspot-contact { left: 82.27%; top: 20.97%; }
+.mobile-menu { display: none; }
+
+.info-window {
+  min-width: 0;
+  overflow: hidden;
+  border: 2px solid var(--line);
+  border-radius: 9px;
+  background: linear-gradient(135deg, #fffdf9, var(--panel));
+  box-shadow: 0 0 0 2px #3f347e, 0 20px 50px #0005;
+}
+
+.window-titlebar {
+  min-height: 44px;
+  padding: 7px 10px 7px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #fff;
+  background: linear-gradient(180deg, #7774bc, #514e99);
+  border-bottom: 2px solid #b9ade1;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+.close-button {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: none;
+  place-items: center;
+  color: var(--purple-dark);
+  background: #e3ddee;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  box-shadow: inset -1px -1px #7d74aa;
+  cursor: pointer;
+  font-size: 23px;
+  line-height: 1;
+}
+
+.close-button.is-visible { display: grid; }
+.window-content { padding: clamp(22px, 2.2vw, 34px); }
+
+.window-content h1 {
+  margin-bottom: 12px;
+  color: var(--purple-dark);
+  font-size: clamp(24px, 2.1vw, 32px);
+  line-height: 1.35;
+}
+
+.window-content h2 {
+  margin-bottom: 18px;
+  color: var(--text);
+  font-size: clamp(19px, 1.45vw, 23px);
+  line-height: 1.55;
+}
+
+.window-content > div > p { color: var(--subtext); line-height: 1.8; }
+.profile-list { margin-top: 24px; border-top: 2px dotted #c7b8dd; }
+
+.profile-list p {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid #e8e1f2;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.profile-list strong { color: var(--purple-dark); }
+.profile-list span { min-width: 0; overflow-wrap: anywhere; color: var(--subtext); }
+
+.timeline, .project-list, .contact-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.info-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #ddd5ef;
+  border-radius: 10px;
+  background: #fffaf9;
+  box-shadow: 0 2px 0 #e8e1f255;
+}
+
+.info-card strong { color: var(--purple-dark); }
+.info-card p { margin-top: 6px; color: var(--subtext); line-height: 1.75; overflow-wrap: anywhere; }
+.info-card a { display: inline-block; margin-top: 10px; color: var(--purple); font-weight: 700; text-decoration: none; }
+.info-card a:hover { text-decoration: underline; }
+
+@media (max-width: 1100px) and (min-width: 821px) {
+  .portfolio { grid-template-columns: minmax(0, 56fr) minmax(0, 44fr); }
+  .window-content { padding: 22px; }
+}
+
+@media (max-width: 820px) {
+  body { align-content: start; padding: 18px 16px 28px; }
+  .portfolio { max-width: 560px; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .character-area { border: 0; background: transparent; box-shadow: none; }
+
+  /* About 192px tall, leaving the main text at full width. */
+  .scene-frame {
+    max-width: 300px;
+    margin-inline: auto;
+    box-shadow: 0 0 0 1px #9c8fd077, 0 8px 24px #0004;
+  }
+
+  .mobile-menu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .mobile-menu-button {
+    min-width: 0;
+    min-height: 44px;
+    padding: 8px 4px;
+    border: 1px solid #bcb0de;
+    border-radius: 7px;
+    color: #fff;
+    background: linear-gradient(180deg, #7261a2, #514177);
+    box-shadow: inset 0 1px #ffffff33, 0 3px 0 #20172f;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .mobile-menu-button:hover { background: #7462a4; }
+  .window-titlebar { min-height: 48px; padding: 2px 6px 2px 16px; }
+  .close-button { width: 44px; height: 44px; }
+  .window-content { padding: 24px 20px; font-size: 15px; }
+  .window-content h1 { font-size: 26px; }
+  .window-content h2 { font-size: 20px; }
+  .profile-list p { grid-template-columns: 72px minmax(0, 1fr); gap: 10px; }
+  .info-card a { min-height: 44px; display: inline-flex; align-items: center; }
+}
+
+@media (max-width: 360px) {
+  body { padding-inline: 12px; }
+  .window-content { padding-inline: 16px; }
+  .mobile-menu { gap: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-frame .hotspot { transition: none; }
+}
+
+/* Live markers replace the former circles and captions baked into the image. */
+.scene-frame { container-type: inline-size; }
+
+.scene-frame .hotspot::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #fff1ff;
+  box-shadow: 0 0 6px #dc9aff;
+  pointer-events: none;
+}
+
+.scene-frame .hotspot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(14px, 3.1cqw, 30px);
+  height: clamp(14px, 3.1cqw, 30px);
+  border: 2px solid #f8e9ff;
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: none;
+  animation: room-hotspot-pulse 2s ease-in-out infinite;
+}
+
+.scene-frame .hotspot:hover {
+  background: transparent;
+  box-shadow: none;
+}
+
+@keyframes room-hotspot-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(.86); opacity: .75; box-shadow: 0 0 8px 3px #c875ff88; }
+  50% { transform: translate(-50%, -50%) scale(1.16); opacity: 1; box-shadow: 0 0 16px 5px #c875ffbb; }
+}
+
+.hotspot-caption {
+  position: absolute;
+  left: calc(50% + 20px);
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: #100d25df;
+  color: #fff;
+  font-family: Arial, "Malgun Gothic", sans-serif;
+  font-size: clamp(9px, 1.7cqw, 15px);
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.character-blink {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  animation: character-eye-blink 6s step-end infinite;
+}
+
+@keyframes character-eye-blink {
+  0%, 95%, 100% { opacity: 0; }
+  97% { opacity: 1; }
+}
+
+@media (max-width: 820px) {
+  .hotspot-career .hotspot-caption { left: auto; right: calc(50% + 14px); }
+  .hotspot-contact .hotspot-caption { left: auto; right: calc(50% + 14px); }
+  .hotspot-caption { left: calc(50% + 14px); padding-inline: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-frame .hotspot::after { animation: none; transform: translate(-50%, -50%); opacity: .9; }
+  .character-blink { animation: none; display: none; }
+}
