@@ -49,9 +49,9 @@ const pages = {
       <div class="project-list">
         <div class="info-card">
           <strong>Personal Project : Profile Card Maker</strong>
-          <p>게임 컨셉으로 간단한 자기소개를 할 수 있는 카드를 만드는 사이트입니다.</p>
-          <a href="https://profile-card-maker-five.vercel.app/" target="_blank" aria-label="메이커 사이트 바로가기">메이커 사이트 바로가기</a>&nbsp; &nbsp;
-          <a href="#" target="_blank" aria-label="메이커 코드 바로가기">메이커 코드 바로가기</a>
+          <p>게임 컨셉으로 간단한 자기소개를 할 수 있는 프로필 카드를 만드는 사이트입니다.</p>
+          <a href="https://cool-333.github.io/profile-card-maker/" target="_blank" aria-label="메이커 사이트 바로가기">메이커 사이트 바로가기</a>&nbsp; &nbsp;
+          <a href="https://github.com/cool-333/profile-card-maker" target="_blank" aria-label="메이커 코드 바로가기">메이커 코드 바로가기</a>
         </div>
         <div class="info-card">
         
