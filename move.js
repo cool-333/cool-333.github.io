@@ -63,8 +63,8 @@ const pages = {
           <strong>Team Project : 코레일 사이트 리뉴얼 _ Re:Rail</strong>
           <p>코레일 사이트를 직관적이고 사용자 중심적으로 리뉴얼한 팀 프로젝트입니다.</p>
 
-          // 사이트 내 깃허브로 포크해온 후 사이트 직링 수정 예정
-          <a href="https://github.com/leesansa/re_rail" target="_blank" aria-label="Re:Rail 코드">Re:Rail 코드</a>&nbsp; &nbsp;
+          // 사이트 내 깃허브로 포크 완료, 내용 수정 예정
+          <a href="https://github.com/cool-333/re_rail" target="_blank" aria-label="Re:Rail 코드">Re:Rail 코드</a>&nbsp; &nbsp;
           <a href="https://leesansa.github.io/re_rail/" target="_blank" aria-label="Re:Rail 사이트">Re:Rail 사이트</a>
         </div>
         <div class="info-card">
@@ -90,7 +90,7 @@ const pages = {
         </div>
         <div class="info-card">
           <strong>Phone Number</strong>
-          <p>010-4268-7520</p>
+          <p>수정 예정</p>
         </div>
       </div>
     `,
