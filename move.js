@@ -90,7 +90,7 @@ const pages = {
         </div>
         <div class="info-card">
           <strong>Phone Number</strong>
-          <p>수정 예정</p>
+          <p>010-4268-7520</p>
         </div>
       </div>
     `,
