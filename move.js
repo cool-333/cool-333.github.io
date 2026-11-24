@@ -7,8 +7,8 @@ const homeTitle = "안녕하세요!";
 const homeContent = `
   <h2>신입 웹퍼블리셔 성시원입니다.</h2>
   <p>
-    만들고 싶은 것을 하나씩 만들어가며,<br />
-    차근차근 성장하는 웹퍼블리셔가 되고 싶습니다.
+    디자인을 사용자가 편하게 쓰는 화면으로 옮기는<br />
+    웹 퍼블리셔가 되고 싶습니다.
   </p>`;
 
 const pages = {
@@ -114,3 +114,6 @@ closeWindow.addEventListener("click", () => {
   pageContent.closest(".window-content").scrollTop = 0;
   closeWindow.classList.remove("is-visible");
 });
+
+pageTitle.textContent = homeTitle;
+pageContent.innerHTML = homeContent;
