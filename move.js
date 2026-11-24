@@ -5,10 +5,10 @@ const hotspots = document.querySelectorAll(".hotspot");
 
 const homeTitle = "안녕하세요!";
 const homeContent = `
-  <h2>신입 프론트엔드 개발자 성시원입니다.</h2>
+  <h2>신입 웹퍼블리셔 성시원입니다.</h2>
   <p>
     만들고 싶은 것을 하나씩 만들어가며,<br />
-    차근차근 공부하는 개발자가 되고 싶습니다.
+    차근차근 성장하는 웹퍼블리셔가 되고 싶습니다.
   </p>`;
 
 const pages = {
@@ -20,7 +20,7 @@ const pages = {
           <strong>인적사항</strong>
           <p><strong>MBTI</strong> INFJ</p>
           <p><strong>생년월일</strong> 2002.06.12</p>
-          <p><strong>주소지</strong> 서울 관악구 신림동</p>
+          <p><strong>주소지</strong> 경기 수원시 팔달구 매산로 1가</p>
 
         </div>
         <div class="info-card">
@@ -48,29 +48,29 @@ const pages = {
     content: `
       <div class="project-list">
         <div class="info-card">
-          <strong>Personal Project : Profile Card Maker</strong>
+          <strong>Personal Project 01 : Profile Card Maker</strong>
           <p>게임 컨셉으로 간단한 자기소개를 할 수 있는 프로필 카드를 만드는 사이트입니다.</p>
           <a href="https://cool-333.github.io/profile-card-maker/" target="_blank" aria-label="메이커 사이트 바로가기">메이커 사이트 바로가기</a>&nbsp; &nbsp;
           <a href="https://github.com/cool-333/profile-card-maker" target="_blank" aria-label="메이커 코드 바로가기">메이커 코드 바로가기</a>
         </div>
         <div class="info-card">
         
-          <strong>Personal Project 02</strong>
-          <p>개인 프로젝트 (수정 예정)</p>
-          <a href="#" aria-label="개인 프로젝트 (수정 예정) 자세히 보기">자세히 보기</a>
+          <strong>Personal Project 02 : Save the Nature</strong>
+          <p>환경을 보호하자는 취지로 아임웹 템플릿을 이용해 사이트를 만들어 보았습니다.</p>
+          <a href="https://save-the-nature.imweb.me/" aria-label="개인 프로젝트 자세히 보기">자세히 보기 (사이트 접근 유효기간 ~2026.12.08)</a>
         </div>
         <div class="info-card">
           <strong>Team Project : 코레일 사이트 리뉴얼 _ Re:Rail</strong>
           <p>코레일 사이트를 직관적이고 사용자 중심적으로 리뉴얼한 팀 프로젝트입니다.</p>
 
-          // 사이트 내 깃허브로 포크 완료, 내용 수정 예정
           <a href="https://github.com/cool-333/re_rail" target="_blank" aria-label="Re:Rail 코드">Re:Rail 코드</a>&nbsp; &nbsp;
           <a href="https://leesansa.github.io/re_rail/" target="_blank" aria-label="Re:Rail 사이트">Re:Rail 사이트</a>
         </div>
         <div class="info-card">
-          <strong>Server Team Project</strong>
-          <p>서버 연동 팀 프로젝트 예정</p>
-          <a href="#" aria-label="팀 프로젝트 사이트">팀 프로젝트 사이트</a>
+          <strong>Server Team Project : FridgeO</strong>
+          <p>냉장고 안 재료를 관리하고 레시피까지 추천해주는, 서버까지 연동한 팀 프로젝트입니다.</p>
+          <a href="#" target="_blank" aria-label="FridgeO 코드">FridgeO 코드</a>&nbsp; &nbsp;
+          <a href="https://fridgeo.pages.dev/" target="_blank" aria-label="FridgeO 사이트">FridgeO 사이트</a>
         </div>
       </div>
     `,
