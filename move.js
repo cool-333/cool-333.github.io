@@ -57,7 +57,7 @@ const pages = {
         
           <strong>Personal Project 02 : Save the Nature</strong>
           <p>환경을 보호하자는 취지로 아임웹 템플릿을 이용해 사이트를 만들어 보았습니다.</p>
-          <a href="https://save-the-nature.imweb.me/" aria-label="개인 프로젝트 자세히 보기">자세히 보기 (사이트 접근 유효기간 ~2026.12.08)</a>
+          <a href="https://save-the-nature.imweb.me/" target="_blank" aria-label="개인 프로젝트 자세히 보기">자세히 보기 (사이트 접근 유효기간 ~2026.12.08)</a>
         </div>
         <div class="info-card">
           <strong>Team Project : 코레일 사이트 리뉴얼 _ Re:Rail</strong>
