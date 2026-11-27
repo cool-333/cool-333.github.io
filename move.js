@@ -53,12 +53,7 @@ const pages = {
           <a href="https://cool-333.github.io/profile-card-maker/" target="_blank" aria-label="메이커 사이트 바로가기">메이커 사이트 바로가기</a>&nbsp; &nbsp;
           <a href="https://github.com/cool-333/profile-card-maker" target="_blank" aria-label="메이커 코드 바로가기">메이커 코드 바로가기</a>
         </div>
-        <div class="info-card">
-        
-          <strong>Personal Project 02 : Save the Nature</strong>
-          <p>환경을 보호하자는 취지로 아임웹 템플릿을 이용해 사이트를 만들어 보았습니다.</p>
-          <a href="https://save-the-nature.imweb.me/" target="_blank" aria-label="개인 프로젝트 자세히 보기">자세히 보기 (사이트 접근 유효기간 ~2026.12.08)</a>
-        </div>
+
         <div class="info-card">
           <strong>Team Project : 코레일 사이트 리뉴얼 _ Re:Rail</strong>
           <p>코레일 사이트를 직관적이고 사용자 중심적으로 리뉴얼한 팀 프로젝트입니다.</p>
@@ -66,6 +61,7 @@ const pages = {
           <a href="https://github.com/cool-333/re_rail" target="_blank" aria-label="Re:Rail 코드">Re:Rail 코드</a>&nbsp; &nbsp;
           <a href="https://leesansa.github.io/re_rail/" target="_blank" aria-label="Re:Rail 사이트">Re:Rail 사이트</a>
         </div>
+        
         <div class="info-card">
           <strong>Server Team Project : FridgeO</strong>
           <p>냉장고 안 재료를 관리하고 레시피까지 추천해주는, 서버까지 연동한 팀 프로젝트입니다.</p>
